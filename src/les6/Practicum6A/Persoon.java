@@ -1,4 +1,4 @@
-package practicum6A;
+package les6.Practicum6A;
 
 import java.util.ArrayList;
 
@@ -44,10 +44,14 @@ public class Persoon {
     }
 
     public String toString(){
-        String nwString = "";
-        for(int i = 0; i < games.size(); i++) {
-            nwString += (games.get(i) + "\n").toString();
+        if (games.size() == 0){
+            return naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:";
         }
-        return naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:" + "\n" + nwString;
+
+        String nwString = "";
+        for (Game game : games) {
+            nwString += ("\n" + game);
+        }
+        return naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:" + nwString;
     }
 }
