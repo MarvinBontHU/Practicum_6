@@ -43,6 +43,15 @@ public class Persoon {
         return false;
     }
 
+    public Game zoekGameOpNaam(String j){
+        for (Game game : games) {
+            if (game.toString().contains(j)) {
+                return game;
+            }
+        }
+        return null;
+        }
+
     public String toString(){
         if (games.size() == 0){
             return naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:";
