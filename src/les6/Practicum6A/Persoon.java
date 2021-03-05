@@ -1,5 +1,6 @@
 package les6.Practicum6A;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Persoon {
@@ -50,6 +51,11 @@ public class Persoon {
             }
         }
         return null;
+        }
+
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> teKoop){
+            teKoop.removeIf(game -> games.contains(game));
+            return teKoop;
         }
 
     public String toString(){
